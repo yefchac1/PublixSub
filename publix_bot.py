@@ -8,12 +8,12 @@ import time
 
 # This is the path to the chromedriver on my computer called Anita.
 
-anita_path = "/Users/yeferson/Desktop/CodePath/GitHub/PublixSub/chromedriver"
+anita_path = "/opt/homebrew/bin/chromedriver"
 
-webdriver = webdriver.Chrome(anita_path)
+service = Service(anita_path)
+web_driver = webdriver.Chrome(service=service)
+web_driver.get("https://www.publix.com/mc/order-ahead/order-deli-online")
 
-webdriver.get("https://www.publix.com/mc/order-ahead/order-deli-online")
+#time.sleep(5)
 
-time.sleep(5)
-
-webdriver.quit()
+web_driver.quit()
