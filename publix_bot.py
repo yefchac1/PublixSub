@@ -2,6 +2,7 @@
 
 
 #Used selenium to automate the process of ordering a sub from Publix since it works with Python.
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -13,9 +14,6 @@ from selenium.webdriver.chrome.options import Options
 #Imported time since I wanted the app to wait for a few seconds in order to refresh
 
 import time
-
-
-# This is the path to the chromedriver on my computer called Anita.
 
 anita_path = "/opt/homebrew/bin/chromedriver"
 
@@ -71,6 +69,10 @@ wait_time.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="main"]/div[2]/di
 sub_ranch.click()
 print("Ranch Selected!👻")
 
+sub_ranch_extra = wait_time.until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/section/div[2]/div/div/div[1]/div[2]/fieldset[6]/div[2]/div[9]/div/fieldset/div[3]/div/button/span[2]')))
+sub_ranch_extra.click()
+print("Extra Ranch Selected!👾"
+      )
 sub_bbq = wait_time.until(EC.presence_of_element_located((By.XPATH, '//*[@id="main"]/div[2]/div/div/div[1]/div[2]/fieldset[6]/div[2]/div[11]/label')))
 web_driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", sub_bbq)
 wait_time.until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/section/div[2]/div/div/div[1]/div[2]/fieldset[7]/div[2]/div[2]/label/div[2]')))
@@ -135,4 +137,10 @@ print("Next Selected!👍")
 
 time_pick = wait_time.until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/section/div[1]/div[1]/div[5]/div[2]/form/div[3]/div/button/span[1]')))
 print("Time Selected!👍")
+
+#pay_now = wait_time.until(EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/section/div[1]/div[1]/div[6]/div[2]/form/div[3]/button/span[2]')))
+#web_driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", pay_now)
+#wait_time.until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/section/div[1]/div[1]/div[6]/div[2]/form/div[3]/button/span[2]')))
+#print("Pay Now Selected!👍")
+
 web_driver.quit()
