@@ -119,14 +119,14 @@ pickup_phone = wait_time.until(EC.presence_of_element_located((By.XPATH, '//html
 web_driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", pickup_phone)
 wait_time.until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/section/div[1]/div[1]/div[4]/div[2]/form/div[2]/div[3]/div[1]/div/input')))
 pickup_phone.click()
-pickup_phone.send_keys("8133819002")
+pickup_phone.send_keys("") #insert phone
 print("Phone Number Entered!👍")
 
 pickup_email = wait_time.until(EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/section/div[1]/div[1]/div[4]/div[2]/form/div[2]/div[4]/div[1]/div/input')))
 web_driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", pickup_email)
 wait_time.until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/section/div[1]/div[1]/div[4]/div[2]/form/div[2]/div[4]/div[1]/div/input')))
 pickup_email.click()
-pickup_email.send_keys("yefchac1@gmail.com")
+pickup_email.send_keys("") #insert email
 print("Email Entered!👍")
 
 next_pick = wait_time.until(EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/section/div[1]/div[1]/div[4]/div[2]/form/div[3]/button/span[2]')))
